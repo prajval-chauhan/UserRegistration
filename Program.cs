@@ -9,6 +9,7 @@ namespace UserRegistration
         {
             Console.WriteLine("Welcome to the new user registration program");
             firstNameCheck();
+            lastNameCheck();
 
             
         }
@@ -22,6 +23,19 @@ namespace UserRegistration
                 Console.WriteLine("Valid");
             else
                 Console.WriteLine( "Invalid"); 
+
+        }
+
+        static void lastNameCheck()
+        {
+            string name = "^[A-Z]{1}[a-zA-Z0-9]{2,15}$";
+            Regex reg = new Regex(name);
+            Console.WriteLine("Enter your last Name: ");
+            string lastName = Console.ReadLine();
+            if (reg.IsMatch(lastName))
+                Console.WriteLine("Valid");
+            else
+                Console.WriteLine("Invalid");
 
         }
     }
