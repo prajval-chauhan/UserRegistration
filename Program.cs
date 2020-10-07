@@ -11,6 +11,7 @@ namespace UserRegistration
             firstNameCheck();
             lastNameCheck();
             emailValidation();
+            mobileNumberValidation();
 
             
         }
@@ -51,6 +52,19 @@ namespace UserRegistration
                 Console.WriteLine("Email ID is valid");
             else
                 Console.WriteLine("Email ID is not valid");
+        }
+
+        public static void mobileNumberValidation()
+        {
+            string mobileNumber = "^[\\d]{2}[\\d]{10}$";
+            Console.WriteLine("Enter the mobile number : ");
+            string input = Console.ReadLine();
+
+            Regex re = new Regex(mobileNumber);
+            if (re.IsMatch(input))
+                Console.WriteLine("Mobile Number is valid");
+            else
+                Console.WriteLine("Mobile Number is not valid");
         }
     }
 }
