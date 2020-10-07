@@ -70,7 +70,7 @@ namespace UserRegistration
 
         public static void passwordValidation()
         {
-            string password = "^(?=.*?[A-Z])(?=.*?[0-9]).{8,}$";
+            string password = "^(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[@.,;$%^&#{}+_]{1}).{8,}$";
             Console.WriteLine("Enter the password : ");
             string input = Console.ReadLine();
 
