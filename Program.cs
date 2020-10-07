@@ -12,6 +12,7 @@ namespace UserRegistration
             lastNameCheck();
             emailValidation();
             mobileNumberValidation();
+            passwordValidation();
 
             
         }
@@ -56,7 +57,7 @@ namespace UserRegistration
 
         public static void mobileNumberValidation()
         {
-            string mobileNumber = "^[\\d]{2}[\\d]{10}$";
+            string mobileNumber = "^[\\d]{2}\\s[\\d]{10}$";
             Console.WriteLine("Enter the mobile number : ");
             string input = Console.ReadLine();
 
@@ -65,6 +66,19 @@ namespace UserRegistration
                 Console.WriteLine("Mobile Number is valid");
             else
                 Console.WriteLine("Mobile Number is not valid");
+        }
+
+        public static void passwordValidation()
+        {
+            string password = "[a-zA-Z0-9\\s.@_]{8}";
+            Console.WriteLine("Enter the password : ");
+            string input = Console.ReadLine();
+
+            Regex re = new Regex(password);
+            if (re.IsMatch(input))
+                Console.WriteLine("Password is valid");
+            else
+                Console.WriteLine("Password is not valid");
         }
     }
 }
