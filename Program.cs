@@ -10,6 +10,7 @@ namespace UserRegistration
             Console.WriteLine("Welcome to the new user registration program");
             firstNameCheck();
             lastNameCheck();
+            emailValidation();
 
             
         }
@@ -37,6 +38,19 @@ namespace UserRegistration
             else
                 Console.WriteLine("Invalid");
 
+        }
+
+        public static void emailValidation()
+        {
+            string eMail = "[a-zA-Z0-9]+([+-_.][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]+([.][a-zA-Z]{2})*$";
+            Console.WriteLine("Enter the email ID you want to validate: ");
+            string input = Console.ReadLine();
+
+            Regex re = new Regex(eMail);
+            if (re.IsMatch(input))
+                Console.WriteLine("Email ID is valid");
+            else
+                Console.WriteLine("Email ID is not valid");
         }
     }
 }
