@@ -12,7 +12,7 @@ namespace UserRegistration
         static string eMail_regex = "[a-zA-Z0-9]+([+-_.][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]+([.][a-zA-Z]{2})*$";
         static string mobileNumber_regex = "^[\\d]{2}\\s[\\d]{10}$";
         static string password_regex = "^(?=.*?[A-Z]{1})(?=.*?[0-9])(?=.*?[@.,;$%^&#{}+_]{1}).{8,}$";
-        //parameters that are to be validated
+        //parameters that are to be validated 
         public string firstName;
         public string lastName;
         public string email;
