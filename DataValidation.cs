@@ -46,41 +46,40 @@ namespace UserRegistration
         /// </summary>
         /// <param name="mobileNumber">The mobile number.</param>
         /// <returns></returns>
-        public bool mobileNumberValidation(string mobileNumber)
+        public string mobileNumberValidation(string mobileNumber)
         {
             Regex re = new Regex(mobileNumber_regex);
-            if (re.IsMatch(mobileNumber))
+            try
             {
-                Console.WriteLine("Valid\n");
-                return true;
+                if (re.IsMatch(mobileNumber))
+                    return "Valid Entry";
+                else
+                    throw new Exception();
             }
-            else
+            catch
             {
-                Console.WriteLine("Invalid");
-                Console.ReadKey();
-                Console.Clear();
-                return false;
+                throw new UserValidationCustomException(UserValidationCustomException.customExceptionType.INVALID_MOBILE_NUMBER, "INVALID ENTRY");
             }
+
         }
         /// <summary>
         /// Validates the email Address
         /// </summary>
         /// <param name="email">The email.</param>
         /// <returns></returns>
-        public bool emailValidation(string email)
+        public string emailValidation(string email)
         {
             Regex re = new Regex(eMail_regex);
-            if (re.IsMatch(email))
+            try
             {
-                Console.WriteLine("Valid\n");
-                return true;
+                if (re.IsMatch(email))
+                    return "Valid Entry";
+                else
+                    throw new Exception();
             }
-            else
+            catch
             {
-                Console.WriteLine("Invalid");
-                Console.ReadKey();
-                Console.Clear();
-                return false;
+                throw new UserValidationCustomException(UserValidationCustomException.customExceptionType.INVALID_EMAIL_ID, "INVALID ENTRY");
             }
         }
         /// <summary>
@@ -88,20 +87,19 @@ namespace UserRegistration
         /// </summary>
         /// <param name="password">The password.</param>
         /// <returns></returns>
-        public bool passwordValidation(string password)
+        public string passwordValidation(string password)
         {
             Regex re = new Regex(password_regex);
-            if (re.IsMatch(password))
+            try
             {
-                Console.WriteLine("Valid\n");
-                return true;
+                if (re.IsMatch(password))
+                    return "Valid Entry";
+                else
+                    throw new Exception();
             }
-            else
+            catch
             {
-                Console.WriteLine("Invalid");
-                Console.ReadKey();
-                Console.Clear();
-                return false;
+                throw new UserValidationCustomException(UserValidationCustomException.customExceptionType.INVALID_PASSWORD, "INVALID ENTRY");
             }
         }
     }

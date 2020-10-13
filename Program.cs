@@ -22,17 +22,21 @@ namespace UserRegistration
                 call.lastName = Console.ReadLine();
             } while (call.NameCheck(call.lastName) == false);
 
-            do
-            {
-                Console.WriteLine("Enter your mobile number: ");
-                call.mobileNo = Console.ReadLine();
-            } while (call.mobileNumberValidation(call.mobileNo) == false);
+            
+            Console.WriteLine("Enter your mobile number: ");
+            call.mobileNo = Console.ReadLine();
+            string mobVal = call.mobileNumberValidation(call.mobileNo);
+            Console.WriteLine(mobVal);
 
-            do
-            {
-                Console.WriteLine("Enter the email address: ");
-                call.email = Console.ReadLine();
-            } while (call.emailValidation(call.email) == false);
+            Console.WriteLine("Enter the email address: ");
+            call.email = Console.ReadLine();
+            string emailVal = call.emailValidation(call.email);
+            Console.WriteLine(emailVal);
+
+            Console.WriteLine("Enter your password: ");
+            call.password = Console.ReadLine();
+            string passwordVal = call.passwordValidation(call.password);
+            Console.WriteLine(passwordVal);
         }
     }
 }
